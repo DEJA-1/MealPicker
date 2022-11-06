@@ -21,7 +21,7 @@ class LunchAdapter(val context: Context, private var lunchList: List<Lunch>) : R
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.breakfast_layout, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.lunch_layout, parent, false)
         return ViewHolder(view)
     }
 

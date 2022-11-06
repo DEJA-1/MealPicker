@@ -4,6 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/drawable/button_gradient.xml" value="0.251" />
+        <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/drawable/button_gradient_dinner.xml" value="0.142" />
+        <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/drawable/button_gradient_lunch.xml" value="0.208" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/drawable/button_selector.xml" value="0.1" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/drawable/ic_launcher_background.xml" value="0.1" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/activity_main.xml" value="0.1" />
@@ -13,6 +15,7 @@
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/fragment_dinner.xml" value="0.26132246376811596" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/fragment_lunch.xml" value="0.26132246376811596" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/fragment_start.xml" value="0.33" />
+        <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/lunch_layout.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/Krzysiek/AndroidStudioProjects/MealPicker/app/src/main/res/layout/meal_layout.xml" value="0.33" />
       </map>
     </option>

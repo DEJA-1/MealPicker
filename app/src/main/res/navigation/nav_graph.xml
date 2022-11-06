@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.mealpicker.fragments.StartFragment"
+        android:label="fragment_start"
+        tools:layout="@layout/fragment_start" >
+        <action
+            android:id="@+id/action_startFragment_to_breakfastFragment"
+            app:destination="@id/breakfastFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_lunchFragment"
+            app:destination="@id/lunchFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_dinnerFragment"
+            app:destination="@id/dinnerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/breakfastFragment"
+        android:name="com.example.mealpicker.fragments.BreakfastFragment"
+        android:label="fragment_breakfast"
+        tools:layout="@layout/fragment_breakfast" >
+        <action
+            android:id="@+id/action_breakfastFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/dinnerFragment"
+        android:name="com.example.mealpicker.fragments.DinnerFragment"
+        android:label="fragment_dinner"
+        tools:layout="@layout/fragment_dinner" >
+        <action
+            android:id="@+id/action_dinnerFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/lunchFragment"
+        android:name="com.example.mealpicker.fragments.LunchFragment"
+        android:label="fragment_lunch"
+        tools:layout="@layout/fragment_lunch" >
+        <action
+            android:id="@+id/action_lunchFragment_to_startFragment"
+            app:destination="@id/startFragment" />
+    </fragment>
+</navigation>

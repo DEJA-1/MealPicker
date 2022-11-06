@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">MealPicker</string>
+
+    <string name="breakfast1">Breakfast1</string>
+    <string name="breakfast2">Breakfast2</string>
+    <string name="breakfast3">Breakfast3</string>
+    <string name="breakfast4">Breakfast4</string>
+    <string name="breakfast5">Breakfast5</string>
+    <string name="breakfast6">Breakfast6</string>
+</resources>

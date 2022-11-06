@@ -10,14 +10,14 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
 import com.example.mealpicker.model.Breakfast
+import com.example.mealpicker.model.Lunch
 
-class BreakfastAdapter(val context: Context, private var breakfastList: List<Breakfast>) :
-    RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
+class LunchAdapter(val context: Context, private var lunchList: List<Lunch>) : RecyclerView.Adapter<LunchAdapter.ViewHolder>() {
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val breakfastTitle: TextView = itemView.findViewById(R.id.meal_title)
-        val breakfastImage: ImageView = itemView.findViewById(R.id.meal_image)
+        val lunchTitle: TextView = itemView.findViewById(R.id.meal_title)
+        val lunchImage: ImageView = itemView.findViewById(R.id.meal_image)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -26,23 +26,22 @@ class BreakfastAdapter(val context: Context, private var breakfastList: List<Bre
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentBreakfast = breakfastList[position]
-        holder.breakfastTitle.text = context.getText(currentBreakfast.breakfastStringResourceId)
-        holder.breakfastImage.setImageResource(currentBreakfast.breakfastImageResourceId)
+        val currentLunch = lunchList[position]
 
-        holder.breakfastImage.setOnClickListener {
-            showDetails(currentBreakfast)
-        }
+        holder.lunchTitle.text = context.getText(currentLunch.lunchStringResourceId)
+        holder.lunchImage.setImageResource(currentLunch.lunchImageResourceId)
+
+        holder.lunchImage.setOnClickListener { showDetails(currentLunch) }
     }
 
-    override fun getItemCount() = breakfastList.size
+    override fun getItemCount(): Int = lunchList.size
 
-    private fun showDetails(currentBreakfast: Breakfast) {
+    private fun showDetails(currentLunch: Lunch) {
         val builder = AlertDialog.Builder(context)
 
         builder.setNeutralButton("Ok") { _, _ -> }
         builder.setTitle("Details: ")
-        builder.setMessage("Kcal: ${currentBreakfast.kcal}\nCarbs: ${currentBreakfast.carbs}\nFat: ${currentBreakfast.fats} \nProtein: ${currentBreakfast.protein}")
+        builder.setMessage("Kcal: ${currentLunch.kcal}\nCarbs: ${currentLunch.carbs}\nFat: ${currentLunch.fats} \nProtein: ${currentLunch.protein}")
         builder.create().show()
     }
 

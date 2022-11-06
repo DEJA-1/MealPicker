@@ -7,4 +7,11 @@
     <string name="breakfast4">Breakfast4</string>
     <string name="breakfast5">Breakfast5</string>
     <string name="breakfast6">Breakfast6</string>
+
+    <string name="lunch1">Lunch1</string>
+    <string name="lunch2">Lunch2</string>
+    <string name="lunch3">Lunch3</string>
+    <string name="lunch4">Lunch4</string>
+    <string name="lunch5">Lunch5</string>
+    <string name="lunch6">Lunch6</string>
 </resources>

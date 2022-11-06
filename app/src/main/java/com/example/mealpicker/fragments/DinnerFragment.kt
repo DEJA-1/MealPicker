@@ -5,7 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mealpicker.R
+import com.example.mealpicker.adapter.DinnerAdapter
+import com.example.mealpicker.data.Datasource
 import com.example.mealpicker.databinding.FragmentDinnerBinding
 
 class DinnerFragment : Fragment() {
@@ -21,4 +24,14 @@ class DinnerFragment : Fragment() {
         return binding.root
     }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        //recyclerView
+        val dinnerList = Datasource().loadDinners()
+        val adapter = DinnerAdapter(requireContext(), dinnerList)
+        val recyclerView = binding.dinnerRecyclerview
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+    }
 }

@@ -14,4 +14,11 @@
     <string name="lunch4">Lunch4</string>
     <string name="lunch5">Lunch5</string>
     <string name="lunch6">Lunch6</string>
+
+    <string name="dinner1">Dinner1</string>
+    <string name="dinner2">Dinner2</string>
+    <string name="dinner3">Dinner3</string>
+    <string name="dinner4">Dinner4</string>
+    <string name="dinner5">Dinner5</string>
+    <string name="dinner6">Dinner6</string>
 </resources>

@@ -44,7 +44,7 @@ class LunchFragment : Fragment() {
     }
 
     private fun onFabClicked(lunchList: List<Lunch>) {
-        findNavController().navigate(R.id.action_lunchFragment_to_randomMealFragment)
+        findNavController().navigate(R.id.action_lunchFragment_to_DetailsFragment)
         val randomLunch = getRandomLunch(lunchList)
         Toast.makeText(context, "Drawed: ${randomLunch.kcal}", Toast.LENGTH_SHORT)
             .show()

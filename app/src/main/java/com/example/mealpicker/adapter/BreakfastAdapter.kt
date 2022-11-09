@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
 import com.example.mealpicker.model.Breakfast
@@ -31,6 +32,7 @@ class BreakfastAdapter(val context: Context, private var breakfastList: List<Bre
         holder.breakfastImage.setImageResource(currentBreakfast.breakfastImageResourceId)
 
         holder.breakfastImage.setOnClickListener {
+            holder.itemView.findNavController().navigate(R.id.action_breakfastFragment_to_DetailsFragment)
             showDetails(currentBreakfast)
         }
     }
@@ -38,6 +40,7 @@ class BreakfastAdapter(val context: Context, private var breakfastList: List<Bre
     override fun getItemCount() = breakfastList.size
 
     private fun showDetails(currentBreakfast: Breakfast) {
+
         val builder = AlertDialog.Builder(context)
 
         builder.setNeutralButton("Ok") { _, _ -> }

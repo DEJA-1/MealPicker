@@ -5,12 +5,11 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.mealpicker.R
-import com.example.mealpicker.databinding.FragmentRandomMealBinding
+import com.example.mealpicker.databinding.FragmentDetailsBinding
 
-class RandomMealFragment : Fragment() {
+class DetailsFragment : Fragment() {
 
-    private var _binding: FragmentRandomMealBinding? = null
+    private var _binding: FragmentDetailsBinding? = null
     private val binding get() = _binding!!
 
     val breakfastFragment = BreakfastFragment()
@@ -19,8 +18,8 @@ class RandomMealFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentRandomMealBinding.inflate(inflater, container, false)
+        _binding = FragmentDetailsBinding.inflate(inflater, container, false)
         return binding.root
     }
-    
+
 }

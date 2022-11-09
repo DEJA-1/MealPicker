@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
 import com.example.mealpicker.model.Breakfast
@@ -31,7 +32,10 @@ class LunchAdapter(val context: Context, private var lunchList: List<Lunch>) : R
         holder.lunchTitle.text = context.getText(currentLunch.lunchStringResourceId)
         holder.lunchImage.setImageResource(currentLunch.lunchImageResourceId)
 
-        holder.lunchImage.setOnClickListener { showDetails(currentLunch) }
+        holder.lunchImage.setOnClickListener {
+            holder.itemView.findNavController().navigate(R.id.action_lunchFragment_to_DetailsFragment)
+            showDetails(currentLunch)
+        }
     }
 
     override fun getItemCount(): Int = lunchList.size

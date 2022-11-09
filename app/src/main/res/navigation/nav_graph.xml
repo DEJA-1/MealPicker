@@ -29,8 +29,8 @@
             android:id="@+id/action_breakfastFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_breakfastFragment_to_randomMealFragment"
-            app:destination="@id/randomMealFragment" />
+            android:id="@+id/action_breakfastFragment_to_DetailsFragment"
+            app:destination="@id/DetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/dinnerFragment"
@@ -41,8 +41,8 @@
             android:id="@+id/action_dinnerFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_dinnerFragment_to_randomMealFragment"
-            app:destination="@id/randomMealFragment" />
+            android:id="@+id/action_dinnerFragment_to_DetailsFragment"
+            app:destination="@id/DetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/lunchFragment"
@@ -53,12 +53,12 @@
             android:id="@+id/action_lunchFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_lunchFragment_to_randomMealFragment"
-            app:destination="@id/randomMealFragment" />
+            android:id="@+id/action_lunchFragment_to_DetailsFragment"
+            app:destination="@id/DetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/randomMealFragment"
-        android:name="com.example.mealpicker.fragments.RandomMealFragment"
-        android:label="fragment_random_meal"
-        tools:layout="@layout/fragment_random_meal" />
+        android:id="@+id/DetailsFragment"
+        android:name="com.example.mealpicker.fragments.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details" />
 </navigation>

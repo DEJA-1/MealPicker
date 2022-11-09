@@ -42,7 +42,7 @@ class DinnerFragment : Fragment() {
     }
 
     private fun onFabClicked(dinnerList: List<Dinner>) {
-        findNavController().navigate(R.id.action_dinnerFragment_to_randomMealFragment)
+        findNavController().navigate(R.id.action_dinnerFragment_to_DetailsFragment)
         val randomDinner = getRandomDinner(dinnerList)
         Toast.makeText(context, "Draw: ${randomDinner.carbs}", Toast.LENGTH_SHORT)
             .show()

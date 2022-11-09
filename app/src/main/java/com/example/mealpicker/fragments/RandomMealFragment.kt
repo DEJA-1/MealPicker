@@ -6,15 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.mealpicker.R
+import com.example.mealpicker.databinding.FragmentRandomMealBinding
 
 class RandomMealFragment : Fragment() {
+
+    private var _binding: FragmentRandomMealBinding? = null
+    private val binding get() = _binding!!
+
+    val breakfastFragment = BreakfastFragment()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_random_meal, container, false)
+        _binding = FragmentRandomMealBinding.inflate(inflater, container, false)
+        return binding.root
     }
-
+    
 }

@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mealpicker.R
 import com.example.mealpicker.adapter.DinnerAdapter
@@ -33,5 +34,12 @@ class DinnerFragment : Fragment() {
         val recyclerView = binding.dinnerRecyclerview
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
+
+        //random meal navigation
+        binding.dinnerFab.setOnClickListener { onFabClicked() }
+    }
+
+    private fun onFabClicked() {
+        findNavController().navigate(R.id.action_dinnerFragment_to_randomMealFragment)
     }
 }

@@ -7,7 +7,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.content.ContentProviderCompat
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.mealpicker.R
 import com.example.mealpicker.adapter.BreakfastAdapter
 import com.example.mealpicker.data.Datasource
 import com.example.mealpicker.databinding.FragmentBreakfastBinding
@@ -35,6 +37,13 @@ class BreakfastFragment : Fragment() {
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
+        //random meal navigation
+        binding.breakfastFab.setOnClickListener { onFabClicked() }
+
+    }
+
+    private fun onFabClicked() {
+        findNavController().navigate(R.id.action_breakfastFragment_to_randomMealFragment)
     }
 
 }

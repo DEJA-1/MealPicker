@@ -7,13 +7,16 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
 import com.example.mealpicker.model.Breakfast
 
-class BreakfastAdapter(val context: Context, private var breakfastList: List<Breakfast>) :
-    RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
+class BreakfastAdapter(
+    val context: Context, private var breakfastList: List<Breakfast>, private val fragment: Fragment
+) : RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
 
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -22,7 +25,8 @@ class BreakfastAdapter(val context: Context, private var breakfastList: List<Bre
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        val view = LayoutInflater.from(parent.context).inflate(R.layout.breakfast_layout, parent, false)
+        val view =
+            LayoutInflater.from(parent.context).inflate(R.layout.breakfast_layout, parent, false)
         return ViewHolder(view)
     }
 
@@ -32,21 +36,21 @@ class BreakfastAdapter(val context: Context, private var breakfastList: List<Bre
         holder.breakfastImage.setImageResource(currentBreakfast.breakfastImageResourceId)
 
         holder.breakfastImage.setOnClickListener {
-            holder.itemView.findNavController().navigate(R.id.action_breakfastFragment_to_DetailsFragment)
-            showDetails(currentBreakfast)
+
+            val bundle = bundleOf(
+                "breakfastImageResourceId" to currentBreakfast.breakfastImageResourceId,
+                "breakfastStringResourceId" to currentBreakfast.breakfastStringResourceId,
+                "kcal" to currentBreakfast.kcal,
+                "carbs" to currentBreakfast.carbs,
+                "fats" to currentBreakfast.fats,
+                "protein" to currentBreakfast.protein
+            )
+
+            holder.itemView.findNavController()
+                .navigate(R.id.action_breakfastFragment_to_DetailsFragment, bundle)
         }
     }
 
     override fun getItemCount() = breakfastList.size
-
-    private fun showDetails(currentBreakfast: Breakfast) {
-
-        val builder = AlertDialog.Builder(context)
-
-        builder.setNeutralButton("Ok") { _, _ -> }
-        builder.setTitle("Details: ")
-        builder.setMessage("Kcal: ${currentBreakfast.kcal}\nCarbs: ${currentBreakfast.carbs}\nFat: ${currentBreakfast.fats} \nProtein: ${currentBreakfast.protein}")
-        builder.create().show()
-    }
 
 }

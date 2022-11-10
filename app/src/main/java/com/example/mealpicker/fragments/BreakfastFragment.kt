@@ -37,7 +37,7 @@ class BreakfastFragment : Fragment() {
 
         //recyclerView
         val breakfastList = breakfastList
-        val adapter = BreakfastAdapter(requireContext(), breakfastList)
+        val adapter = BreakfastAdapter(requireContext(), breakfastList, this)
         val recyclerView = binding.breakfastRecyclerview
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())

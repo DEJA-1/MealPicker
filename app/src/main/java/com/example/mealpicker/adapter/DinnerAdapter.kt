@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
@@ -31,20 +32,20 @@ class DinnerAdapter(val context: Context, private var dinnerList: List<Dinner>) 
         holder.dinnerTitle.text = context.resources.getString(currentDinner.dinnerStringResourceId)
         holder.dinnerImage.setImageResource(currentDinner.dinnerImageResourceId)
         holder.dinnerImage.setOnClickListener {
-            holder.itemView.findNavController().navigate(R.id.action_dinnerFragment_to_DetailsFragment)
-            showDetails(currentDinner)
+
+            val bundle = bundleOf(
+                "dinnerImageResourceId" to currentDinner.dinnerImageResourceId,
+                "dinnerStringResourceId" to currentDinner.dinnerStringResourceId,
+                "dKcal" to currentDinner.kcal,
+                "dCarbs" to currentDinner.carbs,
+                "dFats" to currentDinner.fats,
+                "dProtein" to currentDinner.protein
+            )
+
+            holder.itemView.findNavController().navigate(R.id.action_dinnerFragment_to_dinnerDetailsFragment, bundle)
         }
     }
 
     override fun getItemCount(): Int = dinnerList.size
-
-    private fun showDetails(currentDinner: Dinner) {
-        val builder = AlertDialog.Builder(context)
-
-        builder.setNeutralButton("Ok") { _, _ -> }
-        builder.setTitle("Details: ")
-        builder.setMessage("Kcal: ${currentDinner.kcal}\nCarbs: ${currentDinner.carbs}\nFat: ${currentDinner.fats} \nProtein: ${currentDinner.protein}")
-        builder.create().show()
-    }
 
 }

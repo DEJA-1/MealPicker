@@ -1,13 +1,11 @@
-package com.example.mealpicker.fragments
+package com.example.mealpicker.fragments.breakfast
 
-import android.app.AlertDialog
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.core.content.ContentProviderCompat
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mealpicker.R
@@ -37,7 +35,7 @@ class BreakfastFragment : Fragment() {
 
         //recyclerView
         val breakfastList = breakfastList
-        val adapter = BreakfastAdapter(requireContext(), breakfastList, this)
+        val adapter = BreakfastAdapter(requireContext(), breakfastList)
         val recyclerView = binding.breakfastRecyclerview
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
@@ -48,13 +46,13 @@ class BreakfastFragment : Fragment() {
     }
 
     private fun onFabClicked(breakfastList: List<Breakfast>) {
-        findNavController().navigate(R.id.action_breakfastFragment_to_DetailsFragment)
+        findNavController().navigate(R.id.action_breakfastFragment_to_BreakfastDetailsFragment)
         val randomBreakfast = getRandomBreakfast(breakfastList)
         Toast.makeText(context, "Drawed: ${randomBreakfast.breakfastStringResourceId}", Toast.LENGTH_SHORT)
             .show()
     }
 
-    fun getRandomBreakfast(breakfastList: List<Breakfast>): Breakfast {
+   private fun getRandomBreakfast(breakfastList: List<Breakfast>): Breakfast {
         return breakfastList.random()
     }
 }

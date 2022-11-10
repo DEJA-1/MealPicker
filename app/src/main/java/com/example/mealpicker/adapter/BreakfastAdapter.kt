@@ -1,6 +1,5 @@
 package com.example.mealpicker.adapter
 
-import android.app.AlertDialog
 import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
@@ -8,14 +7,13 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.os.bundleOf
-import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
 import com.example.mealpicker.model.Breakfast
 
 class BreakfastAdapter(
-    val context: Context, private var breakfastList: List<Breakfast>, private val fragment: Fragment
+    val context: Context, private var breakfastList: List<Breakfast>
 ) : RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
 
 
@@ -40,14 +38,14 @@ class BreakfastAdapter(
             val bundle = bundleOf(
                 "breakfastImageResourceId" to currentBreakfast.breakfastImageResourceId,
                 "breakfastStringResourceId" to currentBreakfast.breakfastStringResourceId,
-                "kcal" to currentBreakfast.kcal,
-                "carbs" to currentBreakfast.carbs,
-                "fats" to currentBreakfast.fats,
-                "protein" to currentBreakfast.protein
+                "bKcal" to currentBreakfast.kcal,
+                "bCarbs" to currentBreakfast.carbs,
+                "bFats" to currentBreakfast.fats,
+                "bProtein" to currentBreakfast.protein
             )
 
             holder.itemView.findNavController()
-                .navigate(R.id.action_breakfastFragment_to_DetailsFragment, bundle)
+                .navigate(R.id.action_breakfastFragment_to_BreakfastDetailsFragment, bundle)
         }
     }
 

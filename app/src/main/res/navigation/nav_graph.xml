@@ -22,43 +22,53 @@
     </fragment>
     <fragment
         android:id="@+id/breakfastFragment"
-        android:name="com.example.mealpicker.fragments.BreakfastFragment"
+        android:name="com.example.mealpicker.fragments.breakfast.BreakfastFragment"
         android:label="fragment_breakfast"
         tools:layout="@layout/fragment_breakfast" >
         <action
             android:id="@+id/action_breakfastFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_breakfastFragment_to_DetailsFragment"
-            app:destination="@id/DetailsFragment" />
+            android:id="@+id/action_breakfastFragment_to_BreakfastDetailsFragment"
+            app:destination="@id/BreakfastDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/dinnerFragment"
-        android:name="com.example.mealpicker.fragments.DinnerFragment"
+        android:name="com.example.mealpicker.fragments.dinner.DinnerFragment"
         android:label="fragment_dinner"
         tools:layout="@layout/fragment_dinner" >
         <action
             android:id="@+id/action_dinnerFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_dinnerFragment_to_DetailsFragment"
-            app:destination="@id/DetailsFragment" />
+            android:id="@+id/action_dinnerFragment_to_dinnerDetailsFragment"
+            app:destination="@id/dinnerDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/lunchFragment"
-        android:name="com.example.mealpicker.fragments.LunchFragment"
+        android:name="com.example.mealpicker.fragments.lunch.LunchFragment"
         android:label="fragment_lunch"
         tools:layout="@layout/fragment_lunch" >
         <action
             android:id="@+id/action_lunchFragment_to_startFragment"
             app:destination="@id/startFragment" />
         <action
-            android:id="@+id/action_lunchFragment_to_DetailsFragment"
-            app:destination="@id/DetailsFragment" />
+            android:id="@+id/action_lunchFragment_to_lunchDetailsFragment"
+            app:destination="@id/lunchDetailsFragment" />
     </fragment>
     <fragment
-        android:id="@+id/DetailsFragment"
-        android:name="com.example.mealpicker.fragments.DetailsFragment"
-        android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        android:id="@+id/BreakfastDetailsFragment"
+        android:name="com.example.mealpicker.fragments.breakfast.BreakfastDetailsFragment"
+        android:label="fragment_breakfast_details"
+        tools:layout="@layout/fragment_breakfast_details" />
+    <fragment
+        android:id="@+id/lunchDetailsFragment"
+        android:name="com.example.mealpicker.fragments.lunch.LunchDetailsFragment"
+        android:label="fragment_lunch_details"
+        tools:layout="@layout/fragment_lunch_details" />
+    <fragment
+        android:id="@+id/dinnerDetailsFragment"
+        android:name="com.example.mealpicker.fragments.dinner.DinnerDetailsFragment"
+        android:label="fragment_dinner_details"
+        tools:layout="@layout/fragment_dinner_details" />
 </navigation>

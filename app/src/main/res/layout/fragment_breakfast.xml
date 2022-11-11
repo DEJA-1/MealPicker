@@ -22,6 +22,10 @@
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|right"
         android:layout_margin="16dp"
-        android:src="@drawable/ic_breakfast_fab"/>
+        android:focusable="true"
+        android:clickable="true"
+        android:backgroundTint="@color/blue_main"
+        android:tint="@color/white"
+        android:src="@drawable/ic_fab"/>
 
 </FrameLayout>

@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.os.bundleOf
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.mealpicker.R
@@ -42,10 +43,18 @@ class DinnerFragment : Fragment() {
     }
 
     private fun onFabClicked(dinnerList: List<Dinner>) {
-//        findNavController().navigate(R.id.action_dinnerFragment_to_DetailsFragment)
         val randomDinner = getRandomDinner(dinnerList)
-        Toast.makeText(context, "Draw: ${randomDinner.carbs}", Toast.LENGTH_SHORT)
-            .show()
+
+        val bundle = bundleOf(
+            "randomDinnerImageResourceId" to randomDinner.dinnerImageResourceId,
+            "randomDinnerStringResourceId" to randomDinner.dinnerStringResourceId,
+            "rdKcal" to randomDinner.kcal,
+            "rdCarbs" to randomDinner.carbs,
+            "rdFats" to randomDinner.fats,
+            "rdProtein" to randomDinner.protein
+        )
+
+        findNavController().navigate(R.id.action_dinnerFragment_to_dinnerDetailsFragment, bundle)
     }
 
     private fun getRandomDinner(dinnerList: List<Dinner>) : Dinner {

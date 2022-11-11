@@ -10,12 +10,11 @@ import androidx.core.os.bundleOf
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.mealpicker.R
+import com.example.mealpicker.fragments.breakfast.BreakfastDetailsFragment
 import com.example.mealpicker.model.Breakfast
 
 class BreakfastAdapter(
-    val context: Context, private var breakfastList: List<Breakfast>
-) : RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
-
+    val context: Context, private var breakfastList: List<Breakfast>) : RecyclerView.Adapter<BreakfastAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val breakfastTitle: TextView = itemView.findViewById(R.id.meal_title)

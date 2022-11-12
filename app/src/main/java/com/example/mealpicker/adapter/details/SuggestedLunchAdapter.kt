@@ -4,6 +4,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import androidx.core.os.bundleOf
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.Recycler
 import com.example.mealpicker.R
@@ -27,6 +29,19 @@ class SuggestedLunchAdapter(private val filteredLunchList: List<Lunch>) :
         val currentSuggestedLunch = filteredLunchList[position]
 
         holder.suggestedMealImage.setImageResource(currentSuggestedLunch.lunchImageResourceId)
+
+        holder.suggestedMealImage.setOnClickListener {
+            val bundle = bundleOf(
+                "lunchImageResourceId" to currentSuggestedLunch.lunchImageResourceId,
+                "lunchStringResourceId" to currentSuggestedLunch.lunchStringResourceId,
+                "lKcal" to currentSuggestedLunch.kcal,
+                "lCarbs" to currentSuggestedLunch.carbs,
+                "lFats" to currentSuggestedLunch.fats,
+                "lProtein" to currentSuggestedLunch.protein
+            )
+
+            holder.itemView.findNavController().navigate(R.id.action_BreakfastDetailsFragment_to_lunchDetailsFragment, bundle)
+        }
     }
 
     override fun getItemCount() = filteredLunchList.size

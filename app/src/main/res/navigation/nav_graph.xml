@@ -60,12 +60,20 @@
         android:id="@+id/BreakfastDetailsFragment"
         android:name="com.example.mealpicker.fragments.breakfast.BreakfastDetailsFragment"
         android:label="fragment_breakfast_details"
-        tools:layout="@layout/fragment_breakfast_details" />
+        tools:layout="@layout/fragment_breakfast_details" >
+        <action
+            android:id="@+id/action_BreakfastDetailsFragment_to_lunchDetailsFragment"
+            app:destination="@id/lunchDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/lunchDetailsFragment"
         android:name="com.example.mealpicker.fragments.lunch.LunchDetailsFragment"
         android:label="fragment_lunch_details"
-        tools:layout="@layout/fragment_lunch_details" />
+        tools:layout="@layout/fragment_lunch_details" >
+        <action
+            android:id="@+id/action_lunchDetailsFragment_to_dinnerDetailsFragment"
+            app:destination="@id/dinnerDetailsFragment" />
+    </fragment>
     <fragment
         android:id="@+id/dinnerDetailsFragment"
         android:name="com.example.mealpicker.fragments.dinner.DinnerDetailsFragment"
